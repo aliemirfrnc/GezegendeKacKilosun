@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardview_dark_background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageMars"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mars_image"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@id/textViewAgirlik"
+        app:layout_constraintTop_toBottomOf="@id/btnHesapla" />
+
+    <ImageView
+        android:id="@+id/imageVenüs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/venus_image"
+        android:visibility="invisible"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/btnHesapla"
+        app:layout_constraintBottom_toTopOf="@id/textViewAgirlik" />
+
+    <ImageView
+        android:id="@+id/imageJüpiter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/jupiter_image"
+        android:visibility="invisible"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toBottomOf="@id/btnHesapla"
+        app:layout_constraintBottom_toTopOf="@id/textViewAgirlik" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:text="GEZEGENLERDE KAÇ KİLOSUN"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/checkBoxContainer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/checkBoxContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:orientation="horizontal"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@+id/editTextAgirlik"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+        app:layout_constraintVertical_bias="0.0">
+
+        <CheckBox
+            android:id="@+id/checkBoxMars"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="Mars" />
+
+        <CheckBox
+            android:id="@+id/checkBoxVenüs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="Venüs"
+            android:layout_marginStart="24dp"/>
+
+        <CheckBox
+            android:id="@+id/checkBoxJüpiter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Jüpiter"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="24dp"/>
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/editTextAgirlik"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:hint="Dünyadaki Ağırlığınız"
+        android:textColorHint="@color/white"
+        android:textColor="@android:color/white"
+        android:inputType="numberDecimal"
+        android:minHeight="48dp"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/btnHesapla"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBoxContainer" />
+
+    <Button
+        android:id="@+id/btnHesapla"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Hesapla"
+        app:layout_constraintBottom_toTopOf="@+id/textViewAgirlik"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextAgirlik" />
+
+    <TextView
+        android:id="@+id/textViewAgirlik"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:gravity="center"
+        android:text="Ağırlığınızı hesaplamak için gezegen seçin."
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHesapla" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
